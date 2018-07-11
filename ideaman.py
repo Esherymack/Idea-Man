@@ -67,7 +67,7 @@ async def info(ctx):
     embed.add_field(name="Version", value="0.1")
     embed.add_field(name="Author", value="Esherymack | Madison Tibbett")
     embed.add_field(name="Server count", value=f"{len(client.guilds)}")
-    embed.add_field(name="Github", value="https://github.com/Esherymack")
+    embed.add_field(name="Github", value="https://github.com/Esherymack/Idea-Man")
     await ctx.send(embed=embed)
 
     # overwrite the help command with something pretty
