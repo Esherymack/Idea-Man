@@ -1,4 +1,4 @@
-# Servitor "Idea Man" version 0.1
+# "Idea Man" version 0.2
 # Created by Madison Tibbett
 
 #library imports
@@ -50,11 +50,11 @@ async def fractalidea(ctx):
     # prune the output for prettiness
     returned_answer = str(returned_answer)[1:-1].replace("'", "")
     await ctx.send(returned_answer)
-    
+
 @client.command(aliases=["type"])
 async def fractaltype(ctx):
     do_thing = fractal_io.get_fractal_type()
-    await ctx.send(returned_answer)
+    await ctx.send(do_thing)
 
 # dev tool | command shutdown: shuts down the bot from server
 # MUST HAVE ROLE "BOTMASTER" TO USE
@@ -68,7 +68,7 @@ async def shutdown(ctx):
 # command info: tells you about this bot
 @client.command()
 async def info(ctx):
-    embed = discord.Embed(title="Servitor \"Idea Man\"", description="Gives Fractal Ideas", color=0x00cc99)
+    embed = discord.Embed(title="\"Idea Man\"", description="Gives Fractal Ideas", color=0x00cc99)
     embed.add_field(name="Version", value="0.1")
     embed.add_field(name="Author", value="Esherymack | Madison Tibbett")
     embed.add_field(name="Server count", value=f"{len(client.guilds)}")
@@ -79,9 +79,10 @@ async def info(ctx):
 client.remove_command('help')
 @client.command()
 async def help(ctx):
-    embed = discord.Embed(title="Idea Man", description = "Gives Fractal Ideas. Accepted intonations are:", color=0x00cc99)
+    embed = discord.Embed(title="Idea Man", description = "Gives Fractal Ideas. Accepted commands are:", color=0x00cc99)
+    embed.add_field(name="fractaltype | type", value="Gives a 'style' of fractal to create. Names are based off of DeviantArt tutorial names.", inline=False)
     embed.add_field(name="fractalidea | idea", value="Generates 2-5 variations or styles to create a fractal with.", inline=False)
-    embed.add_field(name="?info", value="Gives info regarding this servitor's development.", inline=False)
+    embed.add_field(name="?info", value="Gives info regarding this bot's development.", inline=False)
     embed.add_field(name="?help", value="Gives this message.", inline=False)
     await ctx.send(embed=embed)
 
