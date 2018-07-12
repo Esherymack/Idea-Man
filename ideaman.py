@@ -50,6 +50,11 @@ async def fractalidea(ctx):
     # prune the output for prettiness
     returned_answer = str(returned_answer)[1:-1].replace("'", "")
     await ctx.send(returned_answer)
+    
+@client.command(aliases=["type"])
+async def fractaltype(ctx):
+    do_thing = fractal_io.get_fractal_type()
+    await ctx.send(returned_answer)
 
 # dev tool | command shutdown: shuts down the bot from server
 # MUST HAVE ROLE "BOTMASTER" TO USE
