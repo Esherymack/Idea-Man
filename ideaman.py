@@ -41,12 +41,10 @@ async def fractalidea(ctx):
     # generate a list and initialize a counter
     # ?is counter necessary?
     returned_answer = []
-    n = 0
     # pull things from ext. file and append them to list
-    while(n < variation_things):
+    for _ in range(variation_things):
         do_thing = fractal_io.get_variation_style()
         returned_answer.append(do_thing)
-        n += 1
     # prune the output for prettiness
     returned_answer = str(returned_answer)[1:-1].replace("'", "")
     await ctx.send(returned_answer)
